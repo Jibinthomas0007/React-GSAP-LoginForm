@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import Button from "./components/form/Button";
+import Button from "../components/form/Button";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 

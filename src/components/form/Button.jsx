@@ -6,11 +6,9 @@ export default function Button({
   variant = "primary",
   disabled = false,
 }) {
-  // 🎨 Base styles
   const baseStyles =
     "w-full py-2 rounded-lg transition font-medium";
 
-  // 🎨 Variants (you can expand later)
   const variants = {
     primary:
       "bg-blue-500 text-white hover:bg-blue-600",
@@ -25,9 +23,14 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${baseStyles} ${variants[variant]} ${
-        disabled ? "opacity-50 cursor-not-allowed" : ""
-      } ${className}`}
+      className={`
+        ${baseStyles} 
+        ${variants[variant]} 
+        ${disabled
+          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+          : "bg-blue-500 text-white hover:bg-blue-600 cursor-pointer"} 
+        ${className}
+      `}
     >
       {children}
     </button>
