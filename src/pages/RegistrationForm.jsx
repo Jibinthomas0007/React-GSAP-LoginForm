@@ -1,13 +1,13 @@
 import { useState } from "react";
 import FormWrapper from "../components/form/FormWrapper";
-import Input from "../components/form/Input";
-import Button from "../components/form/Button";
+import Input from "../components/ui/Input";
+import Button from "../components/ui/Button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 import { registerSchema } from "../validations/authSchemas";
 
-export default function RegistrationForm({ switchToLogin }) {
+export default function RegistrationForm({ switchView  }) {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);    
@@ -122,7 +122,7 @@ export default function RegistrationForm({ switchToLogin }) {
         <p className="text-sm text-center mt-4">
           Already have an account?{" "}
           <span
-            onClick={switchToLogin}
+            onClick={switchView }
             className="text-blue-500 cursor-pointer hover:underline"
           >
             Login

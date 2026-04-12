@@ -1,15 +1,15 @@
 import { useState } from "react";
-import Input from "../components/form/Input";
+import Input from "../components/ui/Input";
 import FormWrapper from "../components/form/FormWrapper";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../features/auth/authSlice";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
-import Button from "../components/form/Button";
+import Button from "../components/ui/Button";
 import { loginSchema } from "../validations/authSchemas";
 
-export default function LoginForm({ switchToRegister }) {
+export default function LoginForm({ switchView }) {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -133,7 +133,7 @@ export default function LoginForm({ switchToRegister }) {
         <p className="text-sm text-center mt-4">
           Don’t have an account?{" "}
           <span
-            onClick={switchToRegister}
+            onClick={switchView}
             className="text-blue-500 cursor-pointer hover:underline"
           >
             Register
